@@ -18,6 +18,7 @@ def index():
     return render_template('index.html', name='Code Fun Do')
 
 
+
 # Main Method in the Server code
 if __name__ == '__main__':
     # Set server address 0.0.0.0:5000/

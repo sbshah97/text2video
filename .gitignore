@@ -100,4 +100,9 @@ ENV/
 # mypy
 .mypy_cache/
 
+# Ignore image and audio files
 img/
+tmp/
+
+# Ignore mp4 files that are generated
+*.mp4

@@ -2,9 +2,31 @@ import os, time, math
 from gtts import gTTS
 from moviepy.editor import *
 from mutagen.mp3 import MP3
+import requests
 
 _FPS = 24
 LANGUAGE = 'en'
+
+class BingImage:
+    def __init__(self):
+        self.subscription_key = "5ecd1122df704d5080f7a4639f1aad98"
+        self.search_url = "https://api.cognitive.microsoft.com/bing/v7.0/images/search"
+        self.headers = {"Ocp-Apim-Subscription-Key": self.subscription_key, "BingAPIs-Market": "IN"}
+
+    def fetch_image(self,search_term):
+        params = {"q": search_term, "imageType": "photo"}
+        response = requests.get(self.search_url, headers=self.headers, params=params)
+
+        response.raise_for_status()
+        search_results = response.json()
+
+        content_urls = [img["contentUrl"] for img in search_results["value"][:1]]
+
+        for content in content_urls:
+            print(content)
+            command = "wget " + content + " --directory-prefix=img/"
+            os.system(command)
+            return content.split('/')[-1]
 
 
 def get_timestamp():
@@ -73,11 +95,13 @@ class Video:
 
     def generate_video(self):
         output = 'out{0}.mp4'.format(get_timestamp())
+        os.system("rm ./*.mp4")
         clips = []
         for part in self.part_list:
             clips.append(part.generate_video())
         final_clip = concatenate_videoclips(clips)
         final_clip.write_videofile(output)
         os.system("rm tmp/*")
+        os.system("rm img/*")
         return output
         
