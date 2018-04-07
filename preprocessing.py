@@ -142,6 +142,10 @@ def fetch_search_queries(corpus):
 		search_queries.append(search_query)
 	return search_queries, sentences
 
+def summarize(text):
+	tokenized_sentences = tokenize_sentences(text)
+	
+
 # returns search queries and sentences used to create them. Use these sentences in TTS
 search_queries, sentences = fetch_search_queries(corpus)
 
