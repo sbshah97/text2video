@@ -106,3 +106,5 @@ tmp/
 
 # Ignore mp4 files that are generated
 *.mp4
+
+*.pyc
