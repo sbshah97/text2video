@@ -1,3 +1,4 @@
+from imports import *
 from text2vid import *
 from preprocessing import *
 from summarize import *
@@ -10,7 +11,6 @@ search_queries, sentences = fetch_search_queries(corpus)
 print(len(search_queries))
 print(len(sentences))
 
-# text_sentences = ["Tipu Sultan", "Lenin from Russia."]
 img_url = []
 
 for query in search_queries:

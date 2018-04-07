@@ -1,7 +1,7 @@
-gevent==1.2.2
 Flask==0.12.2
-requests==2.18.4
-nltk==3.2.5
-gtts==1.2.2
-moviepy==0.2.3.2
 mutagen==1.40.0
+nltk==3.2.5
+gevent==1.2.2
+moviepy==0.2.3.2
+requests==2.18.4
+gTTS==1.2.2
