@@ -18,3 +18,5 @@ import codecs
 import string
 from nltk.corpus import stopwords
 import re
+from nltk.stem.wordnet import WordNetLemmatizer
+from nltk.stem import SnowballStemmer
