@@ -24,9 +24,11 @@ class BingImage:
 
         for content in content_urls:
             print(content)
-            command = "wget " + content + " --directory-prefix=img/"
+            file_type = content.split('/')[-1].split('.')[-1]
+            filename = "img{0}.{1}".format(get_timestamp(), file_type)
+            command = "wget " + content + " -O img/" + filename
             os.system(command)
-            return content.split('/')[-1]
+            return filename
 
 
 def get_timestamp():

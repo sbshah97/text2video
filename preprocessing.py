@@ -5,11 +5,13 @@ import unicodedata
 import json
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.corpus import stopwords
-import httplib, urllib, base64
+import httplib
+import urllib
+import base64
 
 MAX_STRINGS_IN_SEARCH_QUERY = 3
 
-# just considering history related events. Following tags according to NLTK 
+# just considering history related events. Following tags according to NLTK
 # are important which defines the sentences.
 import_tags = [
 	'FW', 'NN', 'NNS', 'NNP', 'NNPS', 'CD'
@@ -17,12 +19,15 @@ import_tags = [
 
 corpus = '''During World War II, the United States and the Soviet Union fought together as allies against the Axis powers. However, the relationship between the two nations was a tense one. Americans had long been wary of Soviet communism and concerned about Russian leader Joseph Stalin’s tyrannical, blood-thirsty rule of his own country. For their part, the Soviets resented the Americans’ decades-long refusal to treat the USSR as a legitimate part of the international community as well as their delayed entry into World War II, which resulted in the deaths of tens of millions of Russians. After the war ended, these grievances ripened into an overwhelming sense of mutual distrust and enmity. Postwar Soviet expansionism in Eastern Europe fueled many Americans’ fears of a Russian plan to control the world. Meanwhile, the USSR came to resent what they perceived as American officials’ bellicose rhetoric, arms buildup and interventionist approach to international relations. In such a hostile atmosphere, no single party was entirely to blame for the Cold War; in fact, some historians believe it was inevitable.'''
 stopset = set(stopwords.words('english'))
-stopset.update(['.', ',', '"', "'", '?', '!', ':', ';', '(', ')', '[', ']', '{', '}'])
+stopset.update(['.', ',', '"', "'", '?', '!', ':',
+                ';', '(', ')', '[', ']', '{', '}'])
+
 
 def tokenize_sentences(sentences):
 	sentence_tokenlize_list = sent_tokenize(sentences)
 	print "Number of sentences in the input text: " + str(len(sentence_tokenlize_list))
 	return sentence_tokenlize_list
+
 
 def word_tokenized_sentences(tokenized_sentences):
 	word_tokenized_sentences = []
@@ -35,6 +40,7 @@ def word_tokenized_sentences(tokenized_sentences):
 				modified_tokens.append(token)
 		word_tokenized_sentences.append(modified_tokens)
 	return word_tokenized_sentences
+
 
 def query_tokens(word_tokenized_sentences):
 	query_tokens = []
@@ -49,12 +55,15 @@ def query_tokens(word_tokenized_sentences):
 	return query_tokens
 
 # Bigrams not really useful.
+
+
 def bigram_finders(query_tokens):
 	important_words = [token for tokens in query_tokens for token in tokens]
 	important_words = list(set(important_words))
 	bigram_measures = nltk.collocations.BigramAssocMeasures()
 	finder = BigramCollocationFinder.from_words(important_words)
 	#print finder.nbest(bigram_measures.pmi, 10)
+
 
 def term_frequency(corpus):
 	# Term frequency.
@@ -65,6 +74,7 @@ def term_frequency(corpus):
 		tf.append((word, count_))
 	tf = sorted(tf, key=lambda x: x[1])
 	#print tf
+
 
 def bing_text_analysis(tokenized_sentences):
 	headers = {
@@ -107,10 +117,12 @@ def bing_text_analysis(tokenized_sentences):
 	except Exception as e:
 	    print(e)
 
+
 def fetch_search_queries(corpus):
 	bing_results, sentences = bing_text_analysis(tokenize_sentences(corpus))
 	# print bing_results
-	query_results = query_tokens(word_tokenized_sentences(tokenize_sentences(corpus)))
+	query_results = query_tokens(
+		word_tokenized_sentences(tokenize_sentences(corpus)))
 	# print query_results
 
 	# print len(bing_results), len(query_results)
@@ -144,9 +156,3 @@ def fetch_search_queries(corpus):
 
 def summarize(text):
 	tokenized_sentences = tokenize_sentences(text)
-	
-
-# returns search queries and sentences used to create them. Use these sentences in TTS
-search_queries, sentences = fetch_search_queries(corpus)
-
-print search_queries
