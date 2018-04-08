@@ -1,0 +1,134 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BingImage	../text2vid.py	/^class BingImage:$/;"	kind:class	line:47
+Flask	../server.py	/^from flask import Flask, request, Response, render_template, abort, url_for$/;"	kind:namespace	line:3
+LANGUAGE	../text2vid.py	/^LANGUAGE = 'en'$/;"	kind:variable	line:6
+LOWER_BOUND	../summarize.py	/^LOWER_BOUND = 0.20$/;"	kind:variable	line:8
+MAX_STRINGS_IN_SEARCH_QUERY	../preprocessing.py	/^MAX_STRINGS_IN_SEARCH_QUERY = 3$/;"	kind:variable	line:4
+MP3	../imports.py	/^from mutagen.mp3 import MP3$/;"	kind:namespace	line:6
+MySQLdb	../mysql.py	/^import MySQLdb$/;"	kind:namespace	line:1
+PASS	../mysql.py	/^PASS = ''$/;"	kind:variable	line:4
+Part	../text2vid.py	/^class Part:$/;"	kind:class	line:82
+Response	../server.py	/^from flask import Flask, request, Response, render_template, abort, url_for$/;"	kind:namespace	line:3
+SnowballStemmer	../imports.py	/^from nltk.stem import SnowballStemmer$/;"	kind:namespace	line:22
+TextBlob	../questionaire.py	/^from textblob import TextBlob$/;"	kind:namespace	line:6
+UPPER_BOUND	../summarize.py	/^UPPER_BOUND = 0.90$/;"	kind:variable	line:9
+Video	../text2vid.py	/^class Video:$/;"	kind:class	line:101
+WordNetLemmatizer	../imports.py	/^from nltk.stem.wordnet import WordNetLemmatizer$/;"	kind:namespace	line:21
+_FPS	../text2vid.py	/^_FPS = 24$/;"	kind:variable	line:5
+__init__	../text2vid.py	/^    def __init__(self):$/;"	kind:member	line:49
+__init__	../text2vid.py	/^    def __init__(self, image, text):$/;"	kind:member	line:84
+__init__	../text2vid.py	/^    def __init__(self, time):$/;"	kind:member	line:103
+abort	../server.py	/^from flask import Flask, request, Response, render_template, abort, url_for$/;"	kind:namespace	line:3
+acceptable_word	../questionaire.py	/^def acceptable_word(word):$/;"	kind:function	line:43
+add_part	../text2vid.py	/^    def add_part(self, image, text):$/;"	kind:member	line:107
+app	../server.py	/^app = Flask(__name__, static_folder='webapp\/')$/;"	kind:variable	line:12
+b	../driver.py	/^b = BingImage()$/;"	kind:variable	line:11
+base64	../imports.py	/^import base64$/;"	kind:namespace	line:16
+bigram_finders	../preprocessing.py	/^def bigram_finders(all_tokens):$/;"	kind:function	line:74
+bigram_finders	../preprocessing.py	/^def bigram_finders(query_tokens):$/;"	kind:function	line:81
+bing_text_analysis	../preprocessing.py	/^def bing_text_analysis(tokenized_sentences):$/;"	kind:function	line:134
+block_sep	../summarize.py	/^block_sep = '\\n'$/;"	kind:variable	line:13
+calculate_score	../preprocessing.py	/^def calculate_score(sentence, sentences):$/;"	kind:function	line:26
+codecs	../imports.py	/^import codecs$/;"	kind:namespace	line:17
+commit	../mysql.py	/^def commit(query):$/;"	kind:function	line:7
+compare_sents	../summarize.py	/^def compare_sents(sent1, sent2):$/;"	kind:function	line:31
+compare_sents_bounded	../summarize.py	/^def compare_sents_bounded(sent1, sent2):$/;"	kind:function	line:36
+compute_score	../summarize.py	/^def compute_score(sent, sents):$/;"	kind:function	line:44
+corpus	../driver.py	/^corpus = file.read()$/;"	kind:variable	line:14
+driver.py	../driver.py	1;"	kind:file	line:1
+fetch_all	../mysql.py	/^def fetch_all(query):$/;"	kind:function	line:22
+fetch_image	../text2vid.py	/^    def fetch_image(self,search_term):$/;"	kind:member	line:55
+fetch_search_queries	../preprocessing.py	/^def fetch_search_queries(corpus):$/;"	kind:function	line:175
+fetch_video	../server.py	/^def fetch_video():$/;"	kind:function	line:62
+file	../driver.py	/^file = open("webapp\/sum\/sum{0}.txt".format(sys.argv[1]), "w")$/;"	kind:variable	line:25
+file	../driver.py	/^file = open(sys.argv[2], "r")$/;"	kind:variable	line:13
+find_weak_sentences	../preprocessing.py	/^def find_weak_sentences(corpus):$/;"	kind:function	line:34
+format_text	../text2vid.py	/^def format_text(string):  # break in to lines to fit the screen$/;"	kind:function	line:32
+gTTS	../imports.py	/^from gtts import gTTS$/;"	kind:namespace	line:4
+generate_audio	../text2vid.py	/^def generate_audio(text):$/;"	kind:function	line:13
+generate_video	../text2vid.py	/^    def generate_video(self):$/;"	kind:member	line:110
+generate_video	../text2vid.py	/^    def generate_video(self):$/;"	kind:member	line:88
+generate_video	../text2vid.py	/^def generate_video(image, text, duration):$/;"	kind:function	line:22
+get_possible_title	../preprocessing.py	/^def get_possible_title(query_tokens):$/;"	kind:function	line:99
+get_questionnaire	../questionaire.py	/^def get_questionnaire(tokens_tags, tree, sentence):$/;"	kind:function	line:60
+get_questions	../questionaire.py	/^def get_questions(corpus):$/;"	kind:function	line:91
+get_similar_words	../questionaire.py	/^def get_similar_words(word):$/;"	kind:function	line:25
+get_terms	../questionaire.py	/^def get_terms(tree):$/;"	kind:function	line:47
+get_timestamp	../server.py	/^def get_timestamp():$/;"	kind:function	line:20
+get_timestamp	../text2vid.py	/^def get_timestamp():$/;"	kind:function	line:9
+get_videos	../server.py	/^def get_videos():$/;"	kind:function	line:47
+gevent	../server.py	/^import gevent$/;"	kind:namespace	line:4
+httplib	../imports.py	/^import httplib$/;"	kind:namespace	line:14
+img_url	../driver.py	/^img_url = []$/;"	kind:variable	line:33
+import_tags	../preprocessing.py	/^import_tags = [$/;"	kind:variable	line:8
+imports.py	../imports.py	1;"	kind:file	line:1
+index	../server.py	/^def index():$/;"	kind:function	line:101
+is_unimportant	../summarize.py	/^def is_unimportant(word):$/;"	kind:function	line:23
+json	../imports.py	/^import json$/;"	kind:namespace	line:11
+json	../server.py	/^import json$/;"	kind:namespace	line:2
+leaves	../questionaire.py	/^def leaves(tree):$/;"	kind:function	line:15
+lemmatizer	../questionaire.py	/^lemmatizer = WordNetLemmatizer()$/;"	kind:variable	line:11
+math	../imports.py	/^import math$/;"	kind:namespace	line:3
+monkey	../server.py	/^from gevent import monkey$/;"	kind:namespace	line:1
+mysql	../server.py	/^import mysql$/;"	kind:namespace	line:6
+mysql.py	../mysql.py	1;"	kind:file	line:1
+nltk	../imports.py	/^import nltk$/;"	kind:namespace	line:8
+normalize	../questionaire.py	/^def normalize(word):$/;"	kind:function	line:19
+only_important	../summarize.py	/^def only_important(sent):$/;"	kind:function	line:27
+os	../imports.py	/^import os$/;"	kind:namespace	line:1
+os	../server.py	/^import os$/;"	kind:namespace	line:7
+preprocessing.py	../preprocessing.py	1;"	kind:file	line:1
+query_tokens	../preprocessing.py	/^def query_tokens(word_tokenized_sentences):$/;"	kind:function	line:61
+questionaire.py	../questionaire.py	1;"	kind:file	line:1
+re	../imports.py	/^import re$/;"	kind:namespace	line:20
+re	../questionaire.py	/^import re$/;"	kind:namespace	line:8
+relevance	../preprocessing.py	/^def relevance(sentence_, sentence):$/;"	kind:function	line:21
+render_template	../server.py	/^from flask import Flask, request, Response, render_template, abort, url_for$/;"	kind:namespace	line:3
+request	../server.py	/^from flask import Flask, request, Response, render_template, abort, url_for$/;"	kind:namespace	line:3
+requests	../imports.py	/^import requests$/;"	kind:namespace	line:7
+requests	../server.py	/^import requests$/;"	kind:namespace	line:5
+search_url	../server.py	/^search_url = "https:\/\/api.cognitive.microsoft.com\/bing\/v7.0\/images\/search"$/;"	kind:variable	line:15
+sent_tokenize	../imports.py	/^from nltk.tokenize import sent_tokenize, word_tokenize$/;"	kind:namespace	line:12
+sentence_re	../questionaire.py	/^sentence_re = r'(?:(?:[A-Z])(?:.[A-Z])+.?)|(?:\\w+(?:-\\w+)*)|(?:\\$?\\d+(?:.\\d+)?%?)|(?:...|)(?:[][.,;"\\'?():-_`])'$/;"	kind:variable	line:10
+server.py	../server.py	1;"	kind:file	line:1
+set_noun_phrases	../questionaire.py	/^def set_noun_phrases(tree, corpus):$/;"	kind:function	line:52
+static_file	../server.py	/^def static_file(path):$/;"	kind:function	line:106
+stemmer	../questionaire.py	/^stemmer = nltk.stem.porter.PorterStemmer()$/;"	kind:variable	line:12
+stop_words	../summarize.py	/^stop_words = stopwords.words('english')$/;"	kind:variable	line:5
+stopset	../preprocessing.py	/^stopset = set(stopwords.words('english'))$/;"	kind:variable	line:17
+stopwords	../imports.py	/^from nltk.corpus import stopwords$/;"	kind:namespace	line:13
+stopwords	../imports.py	/^from nltk.corpus import stopwords$/;"	kind:namespace	line:19
+stopwords	../questionaire.py	/^stopwords = stopwords.words('english')$/;"	kind:variable	line:13
+string	../imports.py	/^import string$/;"	kind:namespace	line:18
+subprocess	../server.py	/^import subprocess$/;"	kind:namespace	line:8
+subscription_key	../server.py	/^subscription_key = "5ecd1122df704d5080f7a4639f1aad98"$/;"	kind:variable	line:16
+summarize.py	../summarize.py	1;"	kind:file	line:1
+summarize_block	../summarize.py	/^def summarize_block(block):$/;"	kind:function	line:51
+summarize_blocks	../summarize.py	/^def summarize_blocks(blocks):$/;"	kind:function	line:61
+summarize_text	../questionaire.py	/^from summarize import summarize_text$/;"	kind:namespace	line:4
+summarize_text	../summarize.py	/^def summarize_text(text):$/;"	kind:function	line:67
+summary	../driver.py	/^summary = summarize_text(corpus)$/;"	kind:variable	line:26
+summary	../summarize.py	/^summary = summarize_text(corpus)/;"	kind:variable	line:74
+sys	../driver.py	/^import sys$/;"	kind:namespace	line:5
+term_frequency	../preprocessing.py	/^def term_frequency(corpus):$/;"	kind:function	line:89
+text2vid.py	../text2vid.py	1;"	kind:file	line:1
+time	../imports.py	/^import time$/;"	kind:namespace	line:2
+time	../server.py	/^import time$/;"	kind:namespace	line:9
+tokenize_sentences	../preprocessing.py	/^def tokenize_sentences(sentences):$/;"	kind:function	line:42
+trivia	../questionaire.py	/^trivia = get_questions(corpus)$/;"	kind:variable	line:114
+try_	../server.py	/^def try_():$/;"	kind:function	line:73
+unicode_	../summarize.py	/^def unicode_(s):$/;"	kind:function	line:16
+unicodedata	../imports.py	/^import unicodedata$/;"	kind:namespace	line:10
+url_for	../server.py	/^from flask import Flask, request, Response, render_template, abort, url_for$/;"	kind:namespace	line:3
+urllib	../imports.py	/^import urllib$/;"	kind:namespace	line:15
+user_login	../server.py	/^def user_login():$/;"	kind:function	line:35
+user_register	../server.py	/^def user_register():$/;"	kind:function	line:25
+v	../driver.py	/^v = Video(sys.argv[1])$/;"	kind:variable	line:10
+wn	../questionaire.py	/^from nltk.corpus import wordnet as wn$/;"	kind:namespace	line:5
+word_tokenize	../imports.py	/^from nltk.tokenize import sent_tokenize, word_tokenize$/;"	kind:namespace	line:12
+word_tokenized_sentences	../preprocessing.py	/^def word_tokenized_sentences(tokenized_sentences):$/;"	kind:function	line:48

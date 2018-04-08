@@ -15,11 +15,20 @@ corpus = file.read()
 # os.system('rm {0}'.format(sys.argv[2]))
 
 search_queries, sentences = fetch_search_queries(corpus)
+print 'ahe'
 
 print search_queries, sentences
 
 print(len(search_queries))
 print(len(sentences))
+
+file = open("webapp/sum/sum{0}.txt".format(sys.argv[1]), "w")
+summary = summarize_text(corpus)
+for summary_ in summary:
+    print(summary_)
+    file.write(summary_)
+    file.write('\n')
+file.close()
 
 img_url = []
 
@@ -33,13 +42,3 @@ for i in range(len(img_url)):
     v.add_part(os.path.join('img', img_url[i]), sentences[i])
 
 v.generate_video()
-
-
-file = open("webapp/sum/sum{0}.txt".format(sys.argv[1]), "w")
-summary = summarize_text(corpus)
-for summary_ in summary:
-    print(summary_)
-    file.write(summary_)
-    file.write('\n')
-
-file.close()

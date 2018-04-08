@@ -60,6 +60,7 @@ def get_videos():
 
 @app.route('/fetch_video', methods=['GET'])
 def fetch_video():
+    print "he"
     file = request.args.get('v')
     print file
     print os.listdir('webapp/vid')
@@ -91,7 +92,7 @@ def try_():
         'vid{0}.mp4'.format(timestamp),
         'sum/sum{0}.txt'.format(timestamp),
         'q/q{0}.txt'.format(timestamp),
-        timestamp
+        int(timestamp/1000)
     ))
     return "Success"
 

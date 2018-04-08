@@ -53,7 +53,7 @@ class BingImage:
 
     # Fetching image from Internet using Bing API
     def fetch_image(self,search_term):
-        params = {"q": search_term, "imageType": "photo"}
+        params = {"q": search_term, "imageType": "photo", "minFileSize": 20000}
         response = requests.get(self.search_url, headers=self.headers, params=params)
 
         response.raise_for_status()
