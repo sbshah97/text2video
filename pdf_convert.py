@@ -4,6 +4,7 @@ from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 import re
+import os
 
 def convert_pdf_to_messy_txt(fname, pages=None):
     if not pages:
@@ -27,7 +28,7 @@ def convert_pdf_to_messy_txt(fname, pages=None):
 
 
 def convert_txt_to_clean(fname):
-    fr = open('./txt/' + fname[:-4] + '.txt')
+    fr = open(os.path.join('tmp/', (fname[:-4]+ '.txt')))
     full_text = ''
     for line in fr:
         if line == '\n':
@@ -40,16 +41,15 @@ def convert_txt_to_clean(fname):
     print full_text
     fr.close()
     # final text final is stored as filename_clean.txt
-    fw = open('./txt/' + fname[:-4] + '_clean.txt', 'w')
+    fw=open(os.path.join('tmp/', (fname[:-4]+ '_clean.txt')), 'w')
     fw.write(full_text.replace('Fig.', 'Figure'))
     fw.close()
 
+# pdf_file = 'sample.pdf'
+# text = convert_pdf_to_messy_txt(pdf_file)
 
-pdf_file = 'sample.pdf'
-text = convert_pdf_to_messy_txt(pdf_file)
+# fw = open('./txt/' + pdf_file[:-4] + '.txt', 'w')
+# fw.write(text)
+# fw.close()
 
-fw = open('./txt/' + pdf_file[:-4] + '.txt', 'w')
-fw.write(text)
-fw.close()
-
-convert_txt_to_clean(pdf_file)
+# convert_txt_to_clean(pdf_file)

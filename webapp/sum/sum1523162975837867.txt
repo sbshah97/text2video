@@ -1,0 +1,43 @@
+EDUCATION
+EXPERIENCE
+TECHNICAL SKILLS
+SELECTED PROJECTS
+Salman Shah
+LinkedIn GitHub sbs.191197 gmail.com
+91 886 189-7183 http salman-bhai.github.io
+in Information Technology with CGPA of 7.26 till 5th Semester IITians PACE Junior Science College 89.85 in HSC Board Examination.
+Aug 2015 Apr 2019 Expected
+Jun 2013 Jun 2015
+Jun 2008 Mar 2013
+INTERNSHIPS Web and Data Science Intern Haqdarshak, Mumbai, India May 2017 Jun 2017 Developed a Full Stack MIS Management Information System application hosted on an AWS Instance
+to monitor field activities with a Flask Web App.
+Ensured product quality of the Android App with Roboelectric Unit Testing Framework
+STARTUPS Lead Web and App Developer, Wheels On Roll, Mangalore, India Sep 2016 Mar 2017 Developed an IoT Framework using webapp2 and Google App Engine to connect the hardware to the
+Android App and designed a Relational Database to store and manage all the data.
+Built a static Website using HTML CSS JavaScript with a Chat Functionality enabled via a third-party service Crisp.
+Co-developed the Android app primarily working with Azure as Cloud Storage.
+DBMS - MySQL, Android SQLite, App Engine Datastore, Firebase.
+This is a research project undertaken by Dr. Sowmya Kamath from Department of Information Technology, NITK.
+Hybrid Malicious Code Detection using Deep Learning Ongoing A hybrid model comprising of an autoencoder and a Deep Belief Network which allows to detect Malicious Code.
+Deep Learning libraries used in Python TensorFlow.
+Used Support Vector Regression with Grid Search and Randomized Search for Hyperparameter Tuning.
+Page 1 of 2
+It uses a pre-trained Image Recognition Model to recognize images and mark attendance for students.
+Currently working on Docker to Dockerising the Open Library Web Application and ONIX feeds to allow for mass import of data.
+Currently looking to publish in a conference with Paper Co-Author Dr. Geetha V - Assistant Faculty at IT Department, NITK Surathkal.
+RELEVANT COURSES
+Soft Computing, Parallel Computing, Distributed Systems, Databases, Design and Analysis of Algorithms and Data Structures, Operating Systems, Networks, UNIX Programming, Computer Graphics, Paradigms Of Programming - Part I and II, Object Oriented Analysis and Design, Probability, Graph Theory, C Programming.
+ACHIEVEMENTS
+Created an Augmented Reality based app which determines locations via Maps API and uses Azure Database.
+Top 20 Repositories around the World Participated in HacktoberFest 2k16 and had one repository
+featuring in the Top 20 Most Committed Repository around the world.
+Project Presentation
+Presented a research project at the 19th Indian National Children Science
+Congress on Leafy Vegetables grown near Railway Tracks Fit for Consumption or not .
+Competitive Programming 133 Problems solved on CodeChef and 100 Problems on Hackerrank
+EXTRA CURRICULAR ACTIVITES
+Campus Co-ordinator at Hacktoberfest 2018, organised by Web Enthusiasts Club NITK and Team
+Engineer.
+Executive Member at IEEE-NITK Student Branch, Web Enthusiasts Club - NITK Editorial Team Member at Team Shoreline College Magazine .
+CV compiled on 2018-03-13
+Page 2 of 2
