@@ -264,3 +264,7 @@ header span {
 .video-list li time i {
     margin-right: 8px;
 }
+
+.video-list .link {
+    color: #EA2E49
+}

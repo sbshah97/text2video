@@ -20,6 +20,17 @@
 </head>
 <body onload="init()">
 
+    <script type="text/javascript">
+
+        function init() {
+            var url_string = window.location.href
+            var url = new URL(url_string);
+            user_id = url.searchParams.get("id");
+            document.getElementById('summary-link').href = 'main.html?id=' + user_id
+        }
+
+    </script>
+
     <div class="textarea" id="textarea-parent">
         <div class="input">
             <textarea id="textarea"></textarea>

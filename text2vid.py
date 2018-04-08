@@ -59,15 +59,24 @@ class BingImage:
         response.raise_for_status()
         search_results = response.json()
 
-        content_urls = [img["contentUrl"] for img in search_results["value"][:1]]
+        content_urls = [img["contentUrl"] for img in search_results["value"]]
 
-        for content in content_urls:
-            print(content)
+        filename = ""
+        i = 0
+        while filename not in os.listdir('img'):
+            content = content_urls[i]
             file_type = content.split('/')[-1].split('.')[-1]
+            print file_type
+            if file_type != 'jpg' and file_type != 'png':
+                i += 1
+                continue
             filename = "img{0}.{1}".format(get_timestamp(), file_type)
+            print(content)
             command = "wget " + content + " -O img/" + filename
             os.system(command)
-            return filename
+            i += 1
+                
+        return filename
 
 # Part Class which generate the video for the given text and Image
 class Part:
@@ -91,20 +100,19 @@ class Part:
 # Video class which generates videos
 class Video:
 
-    def __init__(self):
+    def __init__(self, time):
+        self.output = 'webapp/vid/vid{0}.mp4'.format(time)
         self.part_list = []
 
     def add_part(self, image, text):
         self.part_list.append(Part(image, text))
 
     def generate_video(self):
-        output = 'out{0}.mp4'.format(get_timestamp())
-        os.system("rm ./*.mp4")
         clips = []
         for part in self.part_list:
             clips.append(part.generate_video())
         final_clip = concatenate_videoclips(clips)
-        final_clip.write_videofile(output)
+        final_clip.write_videofile(self.output)
         os.system("rm tmp/*")
         os.system("rm img/*")
-        return output
+        return self.output
