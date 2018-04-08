@@ -121,15 +121,12 @@ def get_possible_title(query_tokens):
 		if count > max_count:
 			max_count = count
 	count_ = max_count
-	while max_count - count_ <= 1:
-		print(count_, max_count)
-		while count_ not in freq_important_words.keys and count_ > 0:
-			count_ -= 1
-		if count_ <= 0:
-			break
+	while max_count - count_ <= 1 and count_ > 0:
 		for word in freq_important_words[count_]:
 			most_freq_words.append(word)
 		count_ -= 1
+		while count_ not in freq_important_words:
+			count_ -= 1
 	most_freq_words_ = ""
 	for word in set(most_freq_words):
 		most_freq_words_ += word + " "

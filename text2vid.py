@@ -99,7 +99,6 @@ class Video:
 
     def generate_video(self):
         output = 'out{0}.mp4'.format(get_timestamp())
-        os.system("rm ./*.mp4")
         clips = []
         for part in self.part_list:
             clips.append(part.generate_video())
