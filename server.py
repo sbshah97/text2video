@@ -107,13 +107,13 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/pdf_upload', methods=['GET', 'POST'])
+@app.route('/pdf_upload', methods=['POST'])
 def upload_file():
-    if request.method == 'POST':
-        print  request.files['file']
-        f = request.files['file']
-        f.save(os.path.join(app.config['UPLOAD_FOLDER'], f.filename))
-        return 'File Uploaded Successfully'
+    print 'r', request
+    print request.files
+    f = request.files['file']
+    f.save(os.path.join(app.config['UPLOAD_FOLDER'], f.filename))
+    return 'File Uploaded Successfully'
 
 
 @app.route('/')
