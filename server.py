@@ -113,22 +113,22 @@ def upload_file():
     f.save(os.path.join(app.config['UPLOAD_FOLDER'], f.filename))
     # text
 
-    subprocess.Popen(
-        ['python driver.py ' + str(timestamp) + ' ' + text_file], shell=True)
-    print 'insert into Videos values({0}, "{1}", "{2}", "{3}", {4})'.format(
-        user_id,
-        'vid/vid{0}.mp4'.format(timestamp),
-        'sum/sum{0}.txt'.format(timestamp),
-        'q/q{0}.txt'.format(timestamp),
-        timestamp
-    )
-    mysql.commit('insert into Videos values({0}, "{1}", "{2}", "{3}", {4})'.format(
-        user_id,
-        'vid{0}.mp4'.format(timestamp),
-        'sum/sum{0}.txt'.format(timestamp),
-        'q/q{0}.txt'.format(timestamp),
-        int(timestamp / 1000)
-    ))
+    # subprocess.Popen(
+    #     ['python driver.py ' + str(timestamp) + ' ' + text_file], shell=True)
+    # print 'insert into Videos values({0}, "{1}", "{2}", "{3}", {4})'.format(
+    #     user_id,
+    #     'vid/vid{0}.mp4'.format(timestamp),
+    #     'sum/sum{0}.txt'.format(timestamp),
+    #     'q/q{0}.txt'.format(timestamp),
+    #     timestamp
+    # )
+    # mysql.commit('insert into Videos values({0}, "{1}", "{2}", "{3}", {4})'.format(
+    #     user_id,
+    #     'vid{0}.mp4'.format(timestamp),
+    #     'sum/sum{0}.txt'.format(timestamp),
+    #     'q/q{0}.txt'.format(timestamp),
+    #     int(timestamp / 1000)
+    # ))
     return "Success"
 
 @app.route('/')

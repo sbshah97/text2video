@@ -28,12 +28,19 @@ function upload() {
                 'display': '',
                 'opacity': 1
             });
-            // console.log(file);
-            // if (file) {
-            //     document.getElementById('upload_form').submit();
-            //     upload_complete();
-            //     return;
-            // }
+            console.log
+            if (file) {
+                document.getElementById('upload_form').submit(function (params) {
+                    $.post($(this).attr('action'), $(this).serialize(), function (res) {
+                        // Do something with the response `res`
+                        console.log(res);
+                        upload_complete();
+                        // Don't forget to hide the loading indicator!
+                    });
+                    return false;
+                });
+                return;
+            }
             _data = {
                 id: user_id,
                 text: $('#textarea').val()
