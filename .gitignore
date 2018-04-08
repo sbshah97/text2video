@@ -103,6 +103,8 @@ ENV/
 # Ignore image and audio files
 img/
 tmp/
+txt/
+webapp/pdf/
 
 # Ignore mp4 files that are generated
 *.mp4

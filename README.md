@@ -2,12 +2,13 @@
 
 ## About
 
-Text is boring — this system auto generates engaging narrated films from PDF textbook excerpts as follows:
-1. PDF to text conversion, and text cleaning / pre-processing (Not Sure of this is Necessary)
-2. Topic identification and extraction using NLP 
-3. Search images by topic and download from Bing API images 
-4. Create Audio for sentence using a Python text to speech library
-5. Create MP4 video from images + text + audio using some Python Library 
+This is a simple system where we have allowed users to input PDF Textbooks and then generate videos from the text of those images. The following work has been done for the images:
+
+1. PDF to text conversion and text cleaning / pre-processing.
+2. Topic identification and extraction using NLP.
+3. Search images by topic and download from Bing API images.
+4. Create Audio for sentence using a Python text to speech library.
+5. Create MP4 video from images + text + audio using moviepy Library. 
 
 ## Installation 
 
