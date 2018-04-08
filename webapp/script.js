@@ -1,5 +1,6 @@
 var upload_text;
 var user_id;
+var file;
 
 function init() {
 
@@ -27,23 +28,29 @@ function upload() {
                 'display': '',
                 'opacity': 1
             });
-            _data = {
-                id: user_id,
-                text: $('#textarea').val()
+            console.log(file);
+            if (file) {
+                document.getElementById('upload_form').submit();
+                upload_complete();
+                return;
             }
-            console.log("ad", _data);
-            $.ajax({
-                type: 'POST',
-                url: '/try',
-                success: function (result) {
-                    if (result == 'Success')
-                        upload_complete()
-                },
-                error: function (err) {
-                    console.log(err);
-                },
-                data: _data
-            })
+            // _data = {
+            //     id: user_id,
+            //     text: $('#textarea').val()
+            // }
+            // console.log("ad", _data);
+            // $.ajax({
+            //     type: 'POST',
+            //     url: '/try',
+            //     success: function (result) {
+            //         if (result == 'Success')
+            //             upload_complete()
+            //     },
+            //     error: function (err) {
+            //         console.log(err);
+            //     },
+            //     data: _data
+            // })
         }, 610);
         
     }, 16);

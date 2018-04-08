@@ -1,16 +1,22 @@
 from gevent import monkey
 import json
-from flask import Flask, request, Response, render_template, abort, url_for
+from flask import Flask, request, Response, render_template, abort, url_for, redirect
 import gevent
 import requests
 import mysql
 import os
 import subprocess
 import time
+from werkzeug.utils import secure_filename
+
+
+UPLOAD_FOLDER = 'webapp/pdf'
+ALLOWED_EXTENSIONS = set(['pdf'])
 
 # Flask Variables
 app = Flask(__name__, static_folder='webapp/')
 monkey.patch_all()
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 search_url = "https://api.cognitive.microsoft.com/bing/v7.0/images/search"
 subscription_key = "5ecd1122df704d5080f7a4639f1aad98"
@@ -95,6 +101,19 @@ def try_():
         int(timestamp/1000)
     ))
     return "Success"
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+@app.route('/pdf_upload', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        print  request.files['file']
+        f = request.files['file']
+        f.save(os.path.join(app.config['UPLOAD_FOLDER'], f.filename))
+        return 'File Uploaded Successfully'
 
 
 @app.route('/')
