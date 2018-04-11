@@ -8,7 +8,7 @@ import os
 import subprocess
 import time
 from werkzeug.utils import secure_filename
-
+from pdf_convert import *
 
 UPLOAD_FOLDER = 'webapp/pdf'
 ALLOWED_EXTENSIONS = set(['pdf'])
@@ -66,10 +66,10 @@ def get_videos():
 
 @app.route('/fetch_video', methods=['GET'])
 def fetch_video():
-    print "he"
+    print("he")
     file = request.args.get('v')
-    print file
-    print os.listdir('webapp/vid')
+    print(file)
+    print(os.listdir('webapp/vid'))
     if file not in os.listdir('webapp/vid'):
         return app.send_static_file('pending.html')
     return app.send_static_file('vid/' + file)
@@ -78,7 +78,7 @@ def fetch_video():
 @app.route('/try', methods=['POST'])
 def try_():
     user_id = request.form['id']
-    print user_id
+    print(user_id)
     text = request.form['text']
     timestamp = get_timestamp()
     text_file = 'tmp/tmp{0}.txt'.format(timestamp)
@@ -109,12 +109,51 @@ def allowed_file(filename):
 
 @app.route('/pdf_upload', methods=['POST'])
 def upload_file():
-    print 'r', request
-    print request.files
     f = request.files['file']
     f.save(os.path.join(app.config['UPLOAD_FOLDER'], f.filename))
-    return 'File Uploaded Successfully'
+    os.system('pwd')
+    os.system('chmod 777 "' +
+              os.path.join(app.config['UPLOAD_FOLDER'], f.filename) + '"')
+    print(
+        os.system('ls -l ' + app.config['UPLOAD_FOLDER']))
 
+    print(os.path.join(app.config['UPLOAD_FOLDER'], f.filename))
+
+    user_id = 1
+
+    timestamp = get_timestamp()
+    pdf_file = os.path.join(app.config['UPLOAD_FOLDER'], f.filename)
+    # print(pdf_file)
+    text = convert_pdf_to_messy_txt(pdf_file)
+
+    pdf_file = pdf_file.split('/')[-1]
+    pdf = pdf_file[:-4] + '.txt'
+    fw = open(os.path.join('tmp/', pdf), 'w')
+    print(os.path.join('tmp/', pdf_file[:-4], '.txt'))
+    fw.write(text)
+    fw.close()
+
+    convert_txt_to_clean(pdf)
+
+    text_file = os.path.join('tmp/', (pdf_file[:-4] + '_clean.txt'))
+
+    subprocess.Popen(
+        ['python driver.py ' + str(timestamp) + ' ' + text_file], shell=True)
+    print 'insert into Videos values({0}, "{1}", "{2}", "{3}", {4})'.format(
+        user_id,
+        'vid/vid{0}.mp4'.format(timestamp),
+        'sum/sum{0}.txt'.format(timestamp),
+        'q/q{0}.txt'.format(timestamp),
+        timestamp
+    )
+    mysql.commit('insert into Videos values({0}, "{1}", "{2}", "{3}", {4})'.format(
+        user_id,
+        'vid{0}.mp4'.format(timestamp),
+        'sum/sum{0}.txt'.format(timestamp),
+        'q/q{0}.txt'.format(timestamp),
+        int(timestamp / 1000)
+    ))
+    return redirect('/main.html?id=' + str(user_id))
 
 @app.route('/')
 def index():

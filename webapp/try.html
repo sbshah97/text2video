@@ -42,9 +42,9 @@
             <br>
             <br>
             <form id="upload_form" action="/pdf_upload" method="POST" enctype="multipart/form-data">
-                <input id="fileinput" type="file" style="display:none;" />
+                <input id="fileinput" type="file" name="file" style="display:none;" />
                 <a class="btn" style="cursor: pointer" id="falseinput">Browse a PDF</a>
-                <input type="submit" class="btn" style="border: 0px;" value="Upload"/>
+                <!-- <input type="submit" class="btn" style="bordser: 0px;" value="Upload"/> -->
                 
                 <script>
                     $(document).ready(function () {

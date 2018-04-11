@@ -108,5 +108,5 @@ webapp/pdf/
 
 # Ignore mp4 files that are generated
 *.mp4
-
+*.mp3
 *.pyc
