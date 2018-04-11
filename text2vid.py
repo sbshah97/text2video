@@ -64,8 +64,6 @@ class BingImage:
         filename = ""
         i = 0
         while filename not in os.listdir('img') and i < len(content_urls):
-            if len(content_urls) != 0:
-                continue
             content = content_urls[i]
             file_type = content.split('/')[-1].split('.')[-1]
             print file_type

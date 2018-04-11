@@ -186,6 +186,7 @@ def fetch_search_queries(corpus):
 	ind_counter = 0
 	search_queries = []
 	bing_results = dict(bing_results)
+	print bing_results
 	lemma = WordNetLemmatizer()
 	for results in bing_results['documents']:
 		list_of_imp_words = query_results[ind_counter]

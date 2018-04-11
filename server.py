@@ -78,7 +78,7 @@ def fetch_video():
 @app.route('/try', methods=['POST'])
 def try_():
     user_id = request.form['id']
-    print user_id
+    print(user_id)
     text = request.form['text']
     timestamp = get_timestamp()
     text_file = 'tmp/tmp{0}.txt'.format(timestamp)
@@ -111,10 +111,11 @@ def allowed_file(filename):
 def upload_file():
     f = request.files['file']
     f.save(os.path.join(app.config['UPLOAD_FOLDER'], f.filename))
-    os.system('chmod 777 ' +
-              os.path.join(app.config['UPLOAD_FOLDER'], f.filename))
+    os.system('pwd')
+    os.system('chmod 777 "' +
+              os.path.join(app.config['UPLOAD_FOLDER'], f.filename) + '"')
     print(
-        os.system('ls -l ' + os.path.join(app.config['UPLOAD_FOLDER'], f.filename)))
+        os.system('ls -l ' + app.config['UPLOAD_FOLDER']))
 
     print(os.path.join(app.config['UPLOAD_FOLDER'], f.filename))
 
@@ -152,7 +153,7 @@ def upload_file():
         'q/q{0}.txt'.format(timestamp),
         int(timestamp / 1000)
     ))
-    return "Success"
+    return redirect('/main.html?id=' + str(user_id))
 
 @app.route('/')
 def index():
